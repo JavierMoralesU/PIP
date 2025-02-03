@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import uic, QtWidgets
 
-qtCreatorFile = "P11_CaracteresDeUnaCadena.ui"  # Nombre del archivo aquí.
+qtCreatorFile = "E06_TablaDeMultiplicar.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -16,19 +16,20 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     # slots
     def aceptar(self):
         try:
-            palabra = self.txt_palabra.text().strip()
+            numero1=self.txt_numero.text().strip()
+            numero = int(numero1)
+            tabla=""
+            if numero>=0:
+                for i in range (1,11):
+                    tabla+=f"{numero}x{i}={numero*i}\n"
+                self.msj("Resultado", f"Tabla de multiplicar del {numero}:\n\n{tabla}")
 
-            if palabra:
-                num_caracteres=len(palabra)
-                mensaje=(
-                    f"Texto ingresado: {palabra}\n"
-                    f"Cantidad de caracteres: {num_caracteres}\n"
-                )
-                self.msj("Resultado", mensaje)
+                #imprime en consola
+                print("Resultado", f"Tabla de multiplicar del {numero}:\n\n{tabla}")
             else:
-                self.msj("Error", "Por favor ingresa una cadena de texto.")
-        except Exception as e:
-            self.msj("Error", f"Ocurrió un error")
+                self.msj("Resultado", "Ingresa un numero positivo")
+        except ValueError:
+            self.msj("Error", "Ingresa un numero valido")
 
     def msj(self, title, txt):
         m = QtWidgets.QMessageBox()

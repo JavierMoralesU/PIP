@@ -1,8 +1,9 @@
 import sys
-
 from PyQt5 import uic, QtWidgets
-qtCreatorFile = "P06_Par_o_Impar.ui"  # Nombre del archivo aquí.
+
+qtCreatorFile = "E04_AreaDeUnPentagono.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
+
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
@@ -11,17 +12,21 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.btn_calcular.clicked.connect(self.calcular)
         self.btn_salir.clicked.connect(self.salir)
-#slots
+
+    # slots
     def calcular(self):
         try:
-            entrada=self.txt_A.text().strip()
-            numero=int(entrada)
-            if numero%2==0:
-                self.msj("Resultado", f"El número {numero} es par.")
-            else:
-                self.msj("Resultado", f"El número {numero} es impar.")
+            apotema1 = self.txt_apotema.text().strip()
+            perimetro1 = self.txt_perimetro.text().strip()
+
+            print(f"Apotema: '{apotema1}', Perímetro: '{perimetro1}'")
+            a = float(apotema1)
+            p = float(perimetro1)
+            resultado = (p*a) / 2
+            self.msj("Área de un pentágono", f"El resultado es {resultado} ")
+
         except ValueError:
-            self.msj("Error", "Ingresa un numero valido")
+            self.msj("Error", "Rellena los campos")
 
     def msj(self, title, txt):
         m = QtWidgets.QMessageBox()
@@ -32,7 +37,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def salir(self):
         QtWidgets.QApplication.quit()
-
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

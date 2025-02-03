@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from PyQt5 import uic, QtWidgets
 import re
 
-qtCreatorFile = "P12_Formato24hr.ui"  # Nombre del archivo aquí.
+qtCreatorFile = "E08_Formato24hr.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):

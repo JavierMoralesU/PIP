@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from PyQt5 import uic, QtWidgets
 import re
 
-qtCreatorFile = "P13_Factorial.ui"  # Nombre del archivo aquí.
+qtCreatorFile = "E09_Factorial.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -14,6 +14,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.btn_calcular.clicked.connect(self.calcular)
         self.btn_salir.clicked.connect(self.salir)
+
 
         # slots
     def calcular(self):
@@ -29,6 +30,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.txt_resultado.setText(f" {resultado}")
         except Exception as e:
             self.msj("Error", f"Ocurrió un error: {str(e)}")
+
 
     def factorial(self, n):
         if n==0 or n==1:

@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import uic, QtWidgets
 
-qtCreatorFile = "P08_AreaDeUnPentagono.ui"  # Nombre del archivo aquí.
+qtCreatorFile = "E05_Edad.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -10,23 +10,22 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
 
-        self.btn_calcular.clicked.connect(self.calcular)
+        self.btn_aceptar.clicked.connect(self.aceptar)
         self.btn_salir.clicked.connect(self.salir)
 
     # slots
-    def calcular(self):
+    def aceptar(self):
         try:
-            apotema1 = self.txt_apotema.text().strip()
-            perimetro1 = self.txt_perimetro.text().strip()
+            edad1=self.txt_edad.text().strip()
 
-            print(f"Apotema: '{apotema1}', Perímetro: '{perimetro1}'")
-            a = float(apotema1)
-            p = float(perimetro1)
-            resultado = (p*a) / 2
-            self.msj("Área de un pentágono", f"El resultado es {resultado} ")
+            edad = int(edad1)
+            if edad>=18:
+                self.msj("Resultado", "Eres mayor de edad")
+            else:
+                self.msj("Resultado", "Eres menor de edad")
 
         except ValueError:
-            self.msj("Error", "Rellena los campos")
+            self.msj("Error", "Ingresa un numero valido")
 
     def msj(self, title, txt):
         m = QtWidgets.QMessageBox()

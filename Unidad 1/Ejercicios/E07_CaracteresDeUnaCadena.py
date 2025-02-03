@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import uic, QtWidgets
 
-qtCreatorFile = "P09_Edad.ui"  # Nombre del archivo aquí.
+qtCreatorFile = "E07_CaracteresDeUnaCadena.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -16,16 +16,19 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     # slots
     def aceptar(self):
         try:
-            edad1=self.txt_edad.text().strip()
+            palabra = self.txt_palabra.text().strip()
 
-            edad = int(edad1)
-            if edad>=18:
-                self.msj("Resultado", "Eres mayor de edad")
+            if palabra:
+                num_caracteres=len(palabra)
+                mensaje=(
+                    f"Texto ingresado: {palabra}\n"
+                    f"Cantidad de caracteres: {num_caracteres}\n"
+                )
+                self.msj("Resultado", mensaje)
             else:
-                self.msj("Resultado", "Eres menor de edad")
-
-        except ValueError:
-            self.msj("Error", "Ingresa un numero valido")
+                self.msj("Error", "Por favor ingresa una cadena de texto.")
+        except Exception as e:
+            self.msj("Error", f"Ocurrió un error")
 
     def msj(self, title, txt):
         m = QtWidgets.QMessageBox()

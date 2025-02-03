@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5 import uic, QtWidgets
-qtCreatorFile = "P07_AreaDeUnCuadrado.ui"  # Nombre del archivo aquí.
+qtCreatorFile = "E03_AreaDeUnCuadrado.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
