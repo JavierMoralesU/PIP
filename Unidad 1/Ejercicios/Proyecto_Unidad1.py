@@ -2,7 +2,6 @@ import statistics
 import sys
 import os
 from statistics import variance, stdev
-
 #import mean
 from PyQt5 import uic, QtWidgets
 
