@@ -25,12 +25,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         #Tendencia central y medidas de dispersion
         self.btn_guardar.clicked.connect(self.guardar)
         self.btn_cargar.clicked.connect(self.cargar)
-
         self.btn_salir.clicked.connect(self.salir)
-
         self.numeros = []
-        self.ruta_archivo="../../Archivos/listaNumeros.csv"
 
+        self.ruta_archivo_Numeros= "../../Archivos/numerosAnalisis.csv"
+        self.ruta_archivo_Resultados= "../../Archivos/resultadosAnalisis.txt"
+        self.guardado = True
     def aceptar(self):
         num_texto=self.txt_numero.text().strip()
 
@@ -38,35 +38,23 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             num=float(num_texto)
             self.numeros.append(num)
             self.txt_numero.clear()
-
-            with open(self.ruta_archivo, "a") as archivo:
-                archivo.write(f"{num}\n")
             self.mostrar_numeros()
+            self.guardado = False
+            self.cambiar_boton_guardar()
 
         except ValueError:
             QtWidgets.QMessageBox.warning(self, "ERROR", "Ingresa un numero valido")
 
     #ListaNumeros (CUADRO)
     def mostrar_numeros(self):
-        try:
-            archivo=open(self.ruta_archivo)
-            contenido=archivo.readlines()
-            archivo.close()
-
-            nums=[]
-            for i in contenido:
-                nums.append(float(i.strip()))
             self.txt_listaNumeros.setText(str(self.numeros))
 
-        except FileNotFoundError:
-            QtWidgets.QMessageBox.warning(self, "ERROR", "El archivo no existe.")
-        except ValueError:
-            QtWidgets.QMessageBox.warning(self, "ERROR", "El archivo contiene datos inválidos.")
 
     def cancelar(self):
          self.numeros.pop()
          self.txt_numero.clear()
          self.mostrar_numeros()
+         self.guardado = False
          self.msj("correcto", f"Ultimo numero eliminado")
 
 
@@ -75,6 +63,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.txt_listaNumeros.clear()
         self.txt_media.clear(), self.txt_mediana.clear(), self.txt_moda.clear()
         self.txt_valorMenor.clear(), self.txt_valorMayor.clear(), self.txt_varianza.clear(), self.txt_desviacionEstandar.clear()
+        self.guardado = False
         self.msj("Correcto", f"Lista reiniciada...")
 
     def calcular(self):
@@ -103,15 +92,39 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.msj("Correcto", f"Valores calculados.")
 
     def guardar(self):
-        archivo = open("../../Archivos/resultadosAnalisis.csv", "w")  # "w"=write (escritura / "a" = append
+        archivo = open(self.ruta_archivo_Numeros, "w")  # "w"=write (escritura / "a" = append
         for num in self.numeros:
             archivo.write(str(num) + "\n")
         archivo.flush()
         archivo.close()
         self.msj("Correcto", f"Archivo guardado correctamente.")
+        self.guardado = True
+        self.cambiar_boton_guardar()
+
+        # Guardado de los resultados
+        Narchivo = open(self.ruta_archivo_Resultados, "w")
+        Narchivo.write("Para la serie de numeros:\n")
+        Narchivo.write(f"{self.numeros}\n\n")
+        Narchivo.write("Los resultados son los siguientes:\n")
+        media   = self.txt_media.toPlainText().strip()
+        mediana = self.txt_mediana.toPlainText().strip()
+        moda    = self.txt_moda.toPlainText().strip()
+        Vmenor = self.txt_valorMenor.toPlainText().strip()
+        Vmayor = self.txt_valorMayor.toPlainText().strip()
+        varianza = self.txt_varianza.toPlainText().strip()
+        desviacion = self.txt_desviacionEstandar.toPlainText().strip()
+        Narchivo.write(f"Media = {media}\n")
+        Narchivo.write(f"Mediana = {mediana}\n")
+        Narchivo.write(f"Moda = {moda}\n")
+        Narchivo.write(f"Valor Menor = {Vmenor}\n")
+        Narchivo.write(f"Valor Mayor = {Vmayor}\n")
+        Narchivo.write(f"Varianza = {varianza}\n")
+        Narchivo.write(f"Desviacion Estandar = {desviacion}\n")
+        Narchivo.flush()
+        Narchivo.close()
 
     def cargar(self):
-        archivo = open("../../Archivos/resultadosAnalisis.csv")
+        archivo = open(self.ruta_archivo_Numeros)
         contenido = archivo.readlines()  # lee el archivo completo
 
         nums=[]
@@ -120,9 +133,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         print(nums)
         self.numeros=nums
+        self.msj("Correcto", f"Archivo cargado.")
         self.calcular()
         self.txt_listaNumeros.setText(str(self.numeros))
-        self.msj("Correcto", f"Archivo cargado.")
+        self.guardado = True
+        self.cambiar_boton_guardar()
+
 
     def salir(self):
         self.close()
@@ -133,6 +149,15 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         m.setWindowTitle(title)
         m.setText(txt)
         m.exec_()
+
+    def cambiar_boton_guardar(self):
+        if self.guardado:
+            self.btn_guardar.setStyleSheet(""" background-color: #16A085;  border-radius: 13px;color: rgb(255, 255, 255); """)
+
+        else:
+            self.btn_guardar.setStyleSheet(""" background-color: #D10A5A; border-radius: 15px;color: rgb(255, 255, 255);""")
+
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
