@@ -1,7 +1,17 @@
 <RCC>
-  <qresource prefix="Logos">
-    <file>C#_Sabritas.png</file>
-    <file>Captura de pantalla 2024-03-02 125440.png</file>
-    <file>Coca-Cola1.png</file>
+  <qresource prefix="NLogos">
+    <file>camaleon.png</file>
+    <file>Castor Ingeniero.jpg</file>
+    <file>cerdito.png</file>
+    <file>cocodrilo.png</file>
+    <file>delfin.png</file>
+    <file>elefante.png</file>
+    <file>Facultad.jpg</file>
+    <file>Leon.png</file>
+    <file>mono.png</file>
+    <file>Pajaro.png</file>
+    <file>Panda.png</file>
+    <file>UAT.jpg</file>
+    <file>zorro.png</file>
   </qresource>
 </RCC>

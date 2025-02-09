@@ -21,6 +21,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             x2_text=self.txt_x2.text().strip()
             y2_text=self.txt_y2.text().strip()
 
+            #Si alguno de los campos no es un número, se muestra un mensaje de error
             if not self.es_numero(x1_text) or not self.es_numero(y1_text) or not self.es_numero(x2_text) or not self.es_numero(y2_text):
                 self.msj("Error", "Por favor, ingresa numeros validos.")
                 return

@@ -16,7 +16,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_salir.clicked.connect(self.salir)
 
 
-        # slots
+        # slots, estos son
     def calcular(self):
         try:
             numero_texto = self.txt_numero.text().strip()
@@ -32,7 +32,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.msj("Error", f"Ocurrió un error: {str(e)}")
 
 
-    def factorial(self, n):
+    def factorial(self, n): #En caso de que el número sea 0 o 1, el factorial es 1,
         if n==0 or n==1:
             return 1
         factorial = 1

@@ -22,6 +22,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             if numero>=0:
                 for i in range (1,11):
                     tabla+=f"{numero}x{i}={numero*i}\n"
+                    #El texto se etsa
                 self.msj("Resultado", f"Tabla de multiplicar del {numero}:\n\n{tabla}")
 
                 #imprime en consola

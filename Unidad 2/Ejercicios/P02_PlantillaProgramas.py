@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import uic, QtWidgets
-qtCreatorFile = "P00_Introduccion.ui"  # Nombre del archivo aquí.
+qtCreatorFile = "P02_PlantillaProgramas.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -15,6 +15,3 @@ if __name__ == "__main__":
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
-
-    # cd Archivos,  una vez en el proyecto
-    # pyrcc5 Recursos.qrc -o Recursos_rc.py

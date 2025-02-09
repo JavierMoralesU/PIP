@@ -26,6 +26,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 return
 
             # Convertir hora actual a un objeto datetime
+            #.strptime convierte una cadena en un objeto datetime
             hora_actual = datetime.strptime(hA, "%H:%M")
 
             final_del_dia = datetime.strptime("23:59", "%H:%M")  # Última hora del día
@@ -34,6 +35,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             # Obtener el número de horas restantes
             horas_restantes_en_horas = horas_restantes.total_seconds() / 3600  # Convertir a horas
             mensaje = f"Quedan {horas_restantes_en_horas:.2f} horas."
+            #.2f indica que se mostrarán 2 decimales
 
             self.txt_resultado.setText(mensaje)
         except Exception as e:
