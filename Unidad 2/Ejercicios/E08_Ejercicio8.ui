@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(170, 170, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_3">
     <property name="geometry">
@@ -27,7 +30,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../3D Objects/UAT.png</pixmap>
+     <pixmap>../../../../3D Objects/UAT.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -46,7 +49,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../3D Objects/facultad_ingenieria_tampico.png</pixmap>
+     <pixmap>../../../../3D Objects/facultad_ingenieria_tampico.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -76,7 +79,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../3D Objects/Castor.jpg</pixmap>
+     <pixmap>../../../../3D Objects/Castor.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -85,61 +88,114 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>280</y>
-      <width>131</width>
-      <height>81</height>
+      <x>260</x>
+      <y>130</y>
+      <width>201</width>
+      <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Rockwell</family>
+     </font>
+    </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Archivos/Recursos.qrc">:/Logos/Castor Ingeniero.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Ingresa un numero:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>0</y>
-      <width>161</width>
-      <height>61</height>
+      <x>220</x>
+      <y>80</y>
+      <width>271</width>
+      <height>51</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/NLogos/Facultad.jpg);</string>
+    <property name="font">
+     <font>
+      <family>Tw Cen MT Condensed Extra Bold</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
     </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Archivos/Recursos.qrc">:/Logos/Facultad.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#aa0000;&quot;&gt;Tabla de multiplicar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QPushButton" name="btn_aceptar">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>141</width>
-      <height>61</height>
+      <x>220</x>
+      <y>230</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(13, 104, 39);
+border-radius:13px;
+</string>
+    </property>
+    <property name="text">
+     <string>Aceptar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txt_numero">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>160</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:13px;</string>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="../../Archivos/Recursos.qrc">:/Logos/UAT.jpg</pixmap>
+   </widget>
+   <widget class="QPushButton" name="btn_salir">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>230</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
     </property>
-    <property name="scaledContents">
-     <bool>true</bool>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(255, 0, 4);
+border-radius:13px;
+</string>
+    </property>
+    <property name="text">
+     <string>Salir</string>
     </property>
    </widget>
   </widget>
@@ -149,7 +205,7 @@
      <x>0</x>
      <y>0</y>
      <width>689</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

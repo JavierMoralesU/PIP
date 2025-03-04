@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>689</width>
-    <height>422</height>
+    <width>716</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -135,14 +135,74 @@ border-radius:10px</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../Archivos/Recursos.qrc">:/Logos/UAT.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>290</y>
+      <width>131</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../Archivos/Recursos.qrc">:/Logos/Castor Ingeniero.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>10</y>
+      <width>161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/NLogos/Facultad.jpg);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../Archivos/Recursos.qrc">:/Logos/Facultad.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>689</width>
-     <height>21</height>
+     <width>716</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -150,6 +210,7 @@ border-radius:10px</string>
  </widget>
  <resources>
   <include location="../Archivos/Recursos.qrc"/>
+  <include location="../../Archivos/Recursos.qrc"/>
  </resources>
  <connections/>
 </ui>

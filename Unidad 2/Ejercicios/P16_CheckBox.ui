@@ -14,30 +14,12 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLineEdit" name="txt_temporizador">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>250</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nombre:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txt_nombre_imagen">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>290</y>
-      <width>431</width>
+      <x>470</x>
+      <y>310</y>
+      <width>221</width>
       <height>51</height>
      </rect>
     </property>
@@ -52,35 +34,6 @@ border-radius:10px</string>
     </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QDial" name="selectorImagen">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>140</y>
-      <width>141</width>
-      <height>121</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>80</y>
-      <width>411</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Archivos/Recursos.qrc">:/Logos/UAT.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
@@ -141,6 +94,110 @@ border-radius:10px</string>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_supergucci">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>120</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Supergucci</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_mrbeast">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>170</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MrBeast</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_alkapone">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>220</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Alkapone</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_pizza">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>220</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pizza</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_pollo">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>120</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pollo a la coca</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_tacos">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>170</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tacos Anna</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Canales de YT que conoces:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Comidas que te gustaria probar</string>
     </property>
    </widget>
   </widget>

@@ -14,18 +14,23 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.selectorImagen.setSingleStep(1)
         self.selectorImagen.setValue(0)
 
+        #label_2
         self.datosImagenes={
-        0: [":/Logos/UAT.png", "imagen 1"],
-        1: [":/Logos/Castor.jpg", "imagen 2"],
-        2: [":/Logos/facultad_ingenieria_tampico.png", "imagen 3"],
+        0: [":/Logos/UAT.jpg", "UAT"],
+        1: [":/Logos/Castor Ingeniero.jpg", "Castor programador"],
+        2: [":/Logos/Facultad.jpg", "La facultad de ingenieria"],
         }
+        self.cambiaValor()
 
     # Área de los Slots
     def cambiaValor(self):
         valor=self.selectorImagen.value()
-        imagen_ruta=self.datosImagenes[valor][0]
-        self.imagen.setPixMap(QtGui.QPixmap(imagen_ruta))
-        print(valor)
+        imagen_ruta = self.datosImagenes[valor][0]
+        self.label_2.setPixmap(QtGui.QPixmap(imagen_ruta))
+
+        imagen_nombre = self.datosImagenes[valor][1]
+        self.txt_nombre_imagen.setText(imagen_nombre)
+        print(f"Imagen: {imagen_nombre}, Índice: {valor}")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

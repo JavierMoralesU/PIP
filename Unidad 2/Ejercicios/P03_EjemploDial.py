@@ -17,6 +17,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     # Área de los Slots
     def cambiaValor(self):
         valor=str(self.dial.value())
+        print(valor)
         self.lineEdit.setText(valor)
 
 if __name__ == "__main__":

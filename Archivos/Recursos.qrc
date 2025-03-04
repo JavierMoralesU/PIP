@@ -1,12 +1,12 @@
 <RCC>
-  <qresource prefix="NLogos">
+  <qresource prefix="Logos">
+    <file>Facultad.jpg</file>
     <file>camaleon.png</file>
     <file>Castor Ingeniero.jpg</file>
     <file>cerdito.png</file>
     <file>cocodrilo.png</file>
     <file>delfin.png</file>
     <file>elefante.png</file>
-    <file>Facultad.jpg</file>
     <file>Leon.png</file>
     <file>mono.png</file>
     <file>Pajaro.png</file>

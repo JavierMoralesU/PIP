@@ -18,3 +18,4 @@ if __name__ == "__main__":
 
     # cd Archivos,  una vez en el proyecto
     # pyrcc5 Recursos.qrc -o Recursos_rc.py
+    # Los archivos generados siempre son nombre_rc.py,  en caso de problema ponerle ese nombre y pasarlo a la misma carpeta el .py
