@@ -33,7 +33,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.seg = int(self.Tsegundo.text())
                 self.min = int(self.Tminuto.text())
                 self.hora = int(self.Thora.text())
-                self.timer.start(100)  # Tiempo en milisegundos
+                self.timer.start(1000)  # Tiempo en milisegundos
                 self.Bempezar.setText("Detener")
             else:
                 self.msj("Error", "Faltaron especificar datos")
@@ -61,9 +61,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             if self.hora == 24:
                 self.hora = 0
                 self.Thora.setText(str(self.hora))
-
-
-
 
     def msj(self, title, txt):
         m = QtWidgets.QMessageBox()

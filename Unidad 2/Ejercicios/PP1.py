@@ -16,32 +16,43 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+
+        self.datosImagenes = \
+        {
+            0: [":/Logos/UAT.jpg", "UAT"],
+            1: [":/Logos/Castor Ingeniero.jpg", "Castor programador"],
+            2: [":/Logos/Facultad.jpg", "La facultad de ingenieria..."],
+            3: [":/Logos/camaleon.png", "Un camaleon"],
+            4: [":/Logos/cerdito.png", "Un cerdito"],
+            5: [":/Logos/cocodrilo.png", "Un cocodrilo"],
+            6: [":/Logos/delfin.png", "Un delfin"],
+            7: [":/Logos/elefante.png", "Un elefante"],
+            8: [":/Logos/Leon.png", "Un leon"],
+            9: [":/Logos/mono.png", "Un mono"],
+            10: [":/Logos/Pajaro.png", "Un pajaro"],
+            11: [":/Logos/Panda.png", "Un panda"],
+            12: [":/Logos/zorro.png", "Un zorro"],
+
+        }
         # Área de los Signals
         self.selectorImagen.valueChanged.connect(self.cambiaValor)
         self.selectorImagen.setMinimum(0)
-        self.selectorImagen.setMaximum(2)
+        self.selectorImagen.setMaximum( len(self.datosImagenes) - 1)
         self.selectorImagen.setSingleStep(1)
         self.selectorImagen.setValue(0)
 
         self.btn_aceptar.clicked.connect(self.Verificar)
-
-
-        #label_2
-        self.datosImagenes={
-        0: [":/Logos/UAT.jpg", "UAT"],
-        1: [":/Logos/Castor Ingeniero.jpg", "Castor programador"],
-        2: [":/Logos/Facultad.jpg", "La facultad de ingenieria..."],
-        }
         self.cambiaValor()
         self.random()
 
 
     # Área de los Slots
     def cambiaValor(self):
-        valor=self.selectorImagen.seg()
+        valor=self.selectorImagen.value()
 
         self.ruta_imagen = self.datosImagenes[valor][0]
         self.label_2.setPixmap(QtGui.QPixmap(self.ruta_imagen))
+
 
         #imagen_nombre = self.datosImagenes[valor][1]
         #self.txt_nombre_imagen.setText(imagen_nombre)
@@ -61,7 +72,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def random (self):
-        n = random.randint (0,2) #self.datosImagenes.len
+        n = random.randint (0, len(self.datosImagenes) - 1)
         texto = self.datosImagenes[n][0]
         self.txt_nombre_imagen.setText(texto)
 
