@@ -1,6 +1,6 @@
 import serial as  control
 
-arduino =control.Serial("COM4",baudrate=9600,timeout=1)
+arduino =control.Serial("COM3",baudrate=9600,timeout=1)
 
 tot_Lectura=20
 Lectura=0

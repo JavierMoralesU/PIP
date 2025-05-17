@@ -14,7 +14,6 @@ class MyApp(QtWidgets.QMainWindow, interfaz.Ui_MainWindow):
         # Área de los Signals
         self.Bcomprobar.clicked.connect(self.comprobar)
 
-
     # Área de los Slots
     def comprobar (self):
         edad = int(self.Tedad.text())
@@ -22,7 +21,6 @@ class MyApp(QtWidgets.QMainWindow, interfaz.Ui_MainWindow):
             self.msj("Puedes votar")
         else:
             self.msj("No puedes votar")
-
     def msj(self,mensaje):
         m = QtWidgets.QMessageBox()
         m.setText(mensaje)
